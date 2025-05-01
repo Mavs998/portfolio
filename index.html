@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael's Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+    
+    <header class="header">
+        <div class="user">
+            <img class="profilepic" src="mj.jpg" alt="">
+            <h3>MIchael</h3>
+            <p>Web Developer</p>
+        </div>
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+            <a href="#education">education</a>
+            <a href="#projects">projects</a>
+            <a href="#contact">contact</a>
+        </nav>
+    </header>
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100.6 107.6" id="star-svg">
+        <path fill="none" stroke="white" stroke-width="2" id="star-path" d="" />
+    </svg>
+    <div id="theme-toggler" class="fas fa-sun"></div>
+
+    <section class="home" id="home">
+        <div class="content">
+            <h3><span class="underline">Michael John's</span> <span class="underline">Portfolio</span></h3>
+            <p>i am an <span class="typing-text">Web Developer</span></p>
+            <a href="" class="btn">My Portfolio</a>
+        </div>
+        <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="https://instagram.com/_4lghifari_" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+            <a href="https://github.com/mavs998" class="fab fa-github"></a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h1 class="heading"><span class="underline">about</span> me</h1>
+        <div class="content">
+            <h3>Hello, I am <span class="underline">MIchael JOhn</span></h3>
+            <p>Hi! I'm Michael, a passionate and aspiring IT Specialist. I love solving complex problems and bringing creative ideas to life through code.</p>
+            <a target="_blank" href="#contact" class="btn">contact me</a>
+        </div>
+
+        <div class="row">
+            <div class="box-container">
+                <div class="box">
+                    <h3>Web Development FrontEnd</h3>
+                    <p>As an IT , I harness PHP to build dynamic and scalable web applications, blending creativity with cutting-edge technology.</p>
+                </div>
+                <div class="box">
+                    <h3>Community-Driven Innovation</h3>
+                    <p>I thrive in collaborative environments, contributing to and learning from developer communities to create impactful solutions.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row progress-row">
+            <div class="progress">
+                <h3 class="underline">HTML<span>70%</span></h3>
+                <div class="bar bar-1-1"><span></span></div>
+                <h3 class="underline">DESIGN<span>80%</span></h3>
+                <div class="bar bar-1-2"><span></span></div>
+                <h3 class="underline">JAVASCRIPT<span>30%</span></h3>
+                <div class="bar bar-1-3"><span></span></div>
+            </div>
+            <div class="progress">
+                <h3 class="underline">SYSTEM CONFIGURATION<span>65%</span></h3>
+                <div class="bar bar-2-1"><span></span></div>
+                <h3 class="underline">Database<span>70%</span></h3>
+                <div class="bar bar-2-2"><span></span></div>
+                <h3 class="underline">LINUX<span>30%</span></h3>
+                <div class="bar bar-2-3"><span></span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="education" id="education">
+        <h1 class="heading">my <span class="underline">Education</span></h1>
+        <div class="box-container">
+          
+          <div class="container my-5">
+            <div class="row">
+              <!-- Column 1 -->
+              <div class="col-6">
+                <div class="box text-center p-4 shadow rounded h-100">
+                  <i class="fas fa-school fa-3x mb-3"></i>
+                  <h3>ELEMENTARY</h3>
+                  <p></p>
+                  <button class="edu-btn btn btn-primary mt-3" onclick="openModal('modalMonic')">Learn More</button>
+                </div>
+              </div>
+          
+              <!-- Column 2 -->
+              <div class="col-6">
+                <div class="box text-center p-4 shadow rounded h-100">
+                  <i class="fas fa-school fa-3x mb-3"></i>
+                  <h3>HIGHSCHOOL</h3>
+                  <p></p>
+                  <button class="edu-btn btn btn-primary mt-3" onclick="openModal('modal2')">Learn More</button>
+                </div>
+              </div>
+          
+              <!-- Column 3 -->
+              <div class="col-6 mt-4">
+                <div class="box text-center p-4 shadow rounded h-100">
+                  <i class="fas fa-school fa-3x mb-3"></i>
+                  <h3>DEVELOPER/COLLEGE STUDENT</h3>
+                  <p></p>
+                  <button class="edu-btn btn btn-primary mt-3" onclick="openModal('modal3')">Learn More</button>
+                </div>
+              </div>
+          
+          
+      
+              <!-- Modal for Monic Elementary School -->
+      <div id="modalMonic" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modalMonic')">&times;</span>
+          <img src="mc.jpg " alt="Monic Elementary School">
+          <div class="modal-text">
+            <h2>Monic Elementary School</h2>
+            <p>
+              During my elementary years, I attended Monic Elementary School, a nurturing environment that laid the foundation for my educational journey. Known for its strong emphasis on basic education and character formation, Monic Elementary provided me with the essential skills in reading, writing, math, and critical thinking.
+
+      The school fosters a supportive and inclusive atmosphere where students are encouraged to explore their creativity, develop discipline, and build strong interpersonal relationships. Dedicated teachers at Monic Elementary work tirelessly to ensure each student receives the guidance and mentorship needed to thrive both academically and socially.
+
+      Beyond academics, Monic Elementary places importance on extracurricular activities, instilling a balanced approach to learning and personal growth. Community involvement, leadership programs, and cultural events are an integral part of the school experience, helping students grow into responsible and well-rounded individuals.
+
+      The values, friendships, and lessons learned at Monic Elementary School continue to be a strong part of who I am today, serving as a stepping stone for all my future endeavors.
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+        <!-- Modal 2 -->
+        <div id="modal2" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <img src="olshco.png" alt="OLSHCO">
+            <div class="modal-text">
+              <h2>OLSHCO - Our Lady of the Sacred Heart College</h2>
+              <p>
+                IN Highschool I studied at OLSHCO, it is a well-known educational institution focused on academic excellence and values-based education. It provides quality programs that shape students for success in both career and character. The institution has a strong legacy of producing well-rounded graduates equipped with both technical skills and ethical grounding.
+
+With a curriculum aligned to global standards, OLSHCO continuously innovates its teaching methods to prepare students for the ever-changing demands of the professional world. It offers a diverse set of programs in various disciplines including IT, Business, Education, and Liberal Arts.
+
+The school fosters a community-centered environment where students are encouraged to participate in outreach programs, student organizations, and leadership development initiatives. Its faculty is composed of highly qualified professionals who are passionate about nurturing young minds.
+
+OLSHCO is recognized not only for its academic credentials but also for its commitment to holistic development, spiritual growth, and community involvement—truly living out its mission to educate hearts and minds for a better society.
+              </p>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Modal 3 -->
+        <div id="modal3" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <img src="mj.jpg" alt="Developer Life">
+            <div class="modal-text">
+              <h2>Developer / Student</h2>
+              <p>
+                A journey filled with coding, learning, and solving real-world problems. As a developer and student, I blend theoretical knowledge with practical skills to grow in the tech industry. This dual role allows me to bridge the gap between academic foundations and industry-level execution.
+
+                I actively engage in developing web applications, conducting software testing, and exploring areas like cybersecurity, data management, and user interface design. Through continuous practice, project-based learning, and collaboration with peers and mentors, I sharpen my critical thinking and problem-solving abilities.
+                
+                Being a student also means staying adaptable—keeping up with rapidly changing technology trends, learning new programming languages, and understanding the core principles of computer science. Whether it’s debugging a tough piece of code or working on a team project, every challenge contributes to my evolution as a future tech professional.
+                
+                This phase is not just about earning a degree, but building a career-ready mindset driven by curiosity, discipline, and a deep passion for innovation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
+    
+
+    <section class="projects" id="projects">
+        <h1 class="heading">my <span class="underline">Projects</span></h1>
+        <div class="box-container">
+            <a href="https://mavs998.github.io/Letter/" target="_blank">
+                <div class="box">
+                    <img src="ss.png" alt="Project 1">
+                    <div class="content">
+                        <h3 class="underline">Message</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="https://www.q-uests.com" target="_blank">
+                <div class="box">
+                    <img src="ss2.png" class="box radius= 20px" alt="Project 2">
+                    <div class="content">
+                        <h3 class="underline font-size 34px">Q-UESTS.COM</h3>
+                    </div>
+                </div>
+            </a>
+    </section>
+
+    <section class="contact" id="contact">
+        <h1 class="heading"><span class="underline">contact</span> me</h1>
+        <form action="">
+            <input type="text" placeholder="your name" class="box">
+            <input type="email" placeholder="your email" class="box">
+            <input type="text" placeholder="subject" class="box">
+            <textarea name="" class="box" placeholder="your message" cols="30" rows="10"></textarea>
+            <input type="submit" value="send message" class="btn">
+        </form>
+    </section>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <script>
+        var type = new Typed('.typing-text', {
+            strings: [,'Aspiring IT Specialist', 'Developer'],
+            typeSpeed: 200,
+            loop: true
+        });
+
+        // Scroll to #home on mobile when page loads
+        window.addEventListener('load', function() {
+            if (window.innerWidth <= 991) { // Mobile breakpoint sesuai media query
+                document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        function openModal(id) {
+    document.getElementById(id).style.display = "block";
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
+
+  // Optional: Close modal on outside click
+  window.onclick = function(event) {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
