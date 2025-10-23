@@ -1,82 +1,70 @@
-let menu = document.querySelector('#menu-btn');
-let header = document.querySelector('.header');
+const menu = document.querySelector('#menu-btn');
+const header = document.querySelector('.header');
 
-menu.onclick = () => {
-  menu.classList.toggle('fa-times');
-  header.classList.toggle('active');
+if (menu && header) {
+  menu.onclick = () => {
+    menu.classList.toggle('fa-times');
+    header.classList.toggle('active');
+  };
+
+  window.addEventListener('scroll', () => {
+    menu.classList.remove('fa-times');
+    header.classList.remove('active');
+  });
 }
 
-window.onscroll = () => {
-  menu.classList.remove('fa-times');
-  header.classList.remove('active');
+const themeToggler = document.querySelector('#theme-toggler');
+if (themeToggler) {
+  themeToggler.onclick = () => {
+    themeToggler.classList.toggle('fa-moon');
+    if (themeToggler.classList.contains('fa-moon')) {
+      document.body.classList.add('active');
+    } else {
+      document.body.classList.remove('active');
+    }
+  };
 }
 
-let themeToggler = document.querySelector('#theme-toggler');
+// Star path scroll-draw animation (guarded)
+const starPath = document.querySelector('#star-path');
+if (starPath && starPath.getAttribute('d')) {
+  const pathLength = starPath.getTotalLength();
+  starPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+  starPath.style.strokeDashoffset = pathLength;
+  starPath.getBoundingClientRect();
 
-themeToggler.onclick = () => {
-  themeToggler.classList.toggle('fa-moon');
-  if (themeToggler.classList.contains('fa-moon')) {
-    document.body.classList.add('active');
-  } else {
-    document.body.classList.remove('active');
-  }
+  window.addEventListener('scroll', () => {
+    const scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) /
+      (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+    const drawLength = pathLength * scrollPercentage;
+    starPath.style.strokeDashoffset = pathLength - drawLength;
+    starPath.style.strokeDasharray = scrollPercentage >= 0.99 ? 'none' : (pathLength + ' ' + pathLength);
+  });
+} else {
+  const starSvg = document.getElementById('star-svg');
+  if (starSvg) starSvg.style.display = 'none';
 }
 
-
-var path = document.querySelector('#star-path');
-
-
-var pathLength = path.getTotalLength();
-
-
-path.style.strokeDasharray = pathLength + ' ' + pathLength;
-
-
-path.style.strokeDashoffset = pathLength;
-
-
-path.getBoundingClientRect();
-
-// When the page scrolls...
-window.addEventListener("scroll", function (e) {
-
-
-
-  var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
-
-  // Length to offset the dashes
-  var drawLength = pathLength * scrollPercentage;
-
-  // Draw in reverse
-  path.style.strokeDashoffset = pathLength - drawLength;
-
-  // When complete, remove the dash array, otherwise shape isn't quite sharp
-  // Accounts for fuzzy math
-  if (scrollPercentage >= 0.99) {
-    path.style.strokeDasharray = "none";
-
-  } else {
-    path.style.strokeDasharray = pathLength + ' ' + pathLength;
-  }
-
-});
-
-var preload = document.getElementById('loader');
+// Optional preloader (guarded)
+const preload = document.getElementById('loader');
 function preloader() {
-  preload.style.display = 'none';
+  if (preload) preload.style.display = 'none';
 }
+
+// Fun effect (not used by default)
 function snap() {
-  var thanos = [document.getElementById('about'), document.getElementById('projects'),]
-  const newThanos = thanos.map((x) => { return x.classList.add('disap'); });
+  const targets = [document.getElementById('about'), document.getElementById('projects')];
+  targets.forEach((el) => el && el.classList.add('disap'));
 }
 
-
-window.addEventListener('scroll', function(){
-  var target=[document.querySelector('.parright'),document.querySelector('.parleft')];
-  var i=0, len=target.length;
-  for(i; i<len; i++){
-      var pos=window.pageYOffset * target[i].dataset.rate;
-      
-      target[i].style.transform='translate('+pos+'px , 0px)';
+// Parallax effect (guarded)
+window.addEventListener('scroll', () => {
+  const targets = [document.querySelector('.parright'), document.querySelector('.parleft')].filter(Boolean);
+  if (targets.length === 0) return;
+  for (const el of targets) {
+    const rate = parseFloat(el.dataset.rate || '0');
+    if (!Number.isFinite(rate) || rate === 0) continue;
+    const pos = window.pageYOffset * rate;
+    el.style.transform = 'translate(' + pos + 'px , 0px)';
   }
-})
+});
